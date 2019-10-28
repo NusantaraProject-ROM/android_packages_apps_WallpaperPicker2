@@ -28,12 +28,14 @@
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:layout_gravity="top"
-        app:layout_scrollFlags="scroll|enterAlways">
+        app:layout_scrollFlags="scroll|enterAlways"
+        android:background="?attr/colorPrimary">
         <TextView
             android:id="@+id/custom_toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="start"
+            android:paddingStart="20dp"
             android:textAppearance="@style/HeaderTextAppearance"/>
     </androidx.appcompat.widget.Toolbar>
 
