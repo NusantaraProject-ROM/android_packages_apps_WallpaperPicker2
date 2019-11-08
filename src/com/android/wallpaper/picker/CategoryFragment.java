@@ -192,6 +192,18 @@ public class CategoryFragment extends ToolbarFragment {
         refreshCurrentWallpapers(metadataHolder, true /* forceRefresh */);
     }
 
+    public void checkAndRequestStoragePermissions() {
+        if (!getFragmentHost().isReadExternalStoragePermissionGranted()) {
+            getFragmentHost().requestExternalStoragePermission(mAdapter);
+        }
+    }
+
+    @Override
+    public void onActivityCreated (Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        checkAndRequestStoragePermissions();
+    }
+
     @Override
     public void onDestroy() {
         super.onDestroy();
