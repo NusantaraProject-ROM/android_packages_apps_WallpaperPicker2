@@ -297,8 +297,13 @@ public abstract class Asset {
             int measuredWidth = mImageViewWidth;
             int measuredHeight = mImageViewHeight;
 
-            int bitmapWidth = mBitmap.getWidth();
-            int bitmapHeight = mBitmap.getHeight();
+            int bitmapWidth = 1;
+            int bitmapHeight = 1;
+
+            if (mBitmap != null) {
+                 bitmapWidth = mBitmap.getWidth();
+                 bitmapHeight = mBitmap.getHeight();
+            }
 
             float scale = Math.min(
                     (float) bitmapWidth / measuredWidth,
